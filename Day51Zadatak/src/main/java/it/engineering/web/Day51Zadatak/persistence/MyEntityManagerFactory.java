@@ -11,6 +11,7 @@ public class MyEntityManagerFactory {
 	private MyEntityManagerFactory() {
 		emf = Persistence.createEntityManagerFactory("Day51Zadatak");
 	}
+	
 	public static EntityManagerFactory getEntityManagerFactory() {
 		if(instance==null) {
 			instance=new MyEntityManagerFactory();

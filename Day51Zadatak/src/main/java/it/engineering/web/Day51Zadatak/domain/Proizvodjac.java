@@ -10,26 +10,24 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="proizvodjac_table")
-@NamedQuery(name="ProizvodjacTable.findAll", query="SELECT p FROM ProizvodjacTable p")
-public class ProizvodjacTable implements Serializable {
+@NamedQuery(name="Proizvodjac.findAll", query="SELECT p FROM Proizvodjac p")
+public class Proizvodjac implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	private int pib;
-
 	private String adresa;
-
+	
 	@Column(name="maticni_broj")
 	private int maticniBroj;
-
 	private String mesto;
+	
 
-	public ProizvodjacTable() {
+	public Proizvodjac() {
 	}
 	
-	
 
-	public ProizvodjacTable(int pib, String adresa, int maticniBroj, String mesto) {
+	public Proizvodjac(int pib, int maticniBroj, String adresa, String mesto) {
 		super();
 		this.pib = pib;
 		this.adresa = adresa;
@@ -70,6 +68,35 @@ public class ProizvodjacTable implements Serializable {
 	public void setMesto(String mesto) {
 		this.mesto = mesto;
 	}
+	
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + pib;
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Proizvodjac other = (Proizvodjac) obj;
+		if (pib != other.pib)
+			return false;
+		return true;
+	}
+
+
 
 	@Override
 	public String toString() {

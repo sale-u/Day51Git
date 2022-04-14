@@ -21,6 +21,18 @@ public class LoginPostAction extends AbstractAction {
 		User user = login(request);
 		
 		if (user!=null) {
+			
+			// da li je vec logovan?
+			List<User> loggedUsers = UserStorage.getInstance().getLoggedUsers();
+			if (loggedUsers.contains(user)) {
+				// vec je logovan
+				request.setAttribute("error_message", "Korisnik je vec logovan!");
+				return WebConstant.PAGE_LOGIN;				
+			}
+			// nije logovan, dodati ga u listu logovanih
+			loggedUsers.add(user);
+			System.out.println(loggedUsers);
+			
 			HttpSession session = request.getSession(true);
 			
 			//postojeci korisnik sistema ima password, napravi novog bez password-a

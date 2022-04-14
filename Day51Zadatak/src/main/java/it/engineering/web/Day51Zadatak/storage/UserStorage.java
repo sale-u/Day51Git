@@ -12,6 +12,7 @@ import it.engineering.web.Day51Zadatak.domain.User;
 
 public class UserStorage {
 	private List<User> users;
+	private List<User> loggedUsers;
 	private static UserStorage instance;
 	
 	public UserStorage() {
@@ -38,6 +39,8 @@ public class UserStorage {
 			}
 		};
 		
+		loggedUsers = new ArrayList<>();
+		
 		
 	}
 	
@@ -53,4 +56,9 @@ public class UserStorage {
 	public List<User> getUsers() {
 		return users;
 	}
+	
+	public List<User> getLoggedUsers() {
+		return loggedUsers;
+	}
+	
 }

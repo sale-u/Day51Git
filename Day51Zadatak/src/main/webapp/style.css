@@ -58,7 +58,7 @@ form {
     width: 37%;
 }
 
-[type="text"], [type="submit"]{
+[type="text"], [type="submit"], [type="password"]{
     margin-top: 2rem;
     display:block;
     height: 3em;

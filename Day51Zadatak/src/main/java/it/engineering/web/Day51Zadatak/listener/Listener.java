@@ -36,12 +36,13 @@ public class Listener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce)  { 
     
 //    	ServletContext sc = sce.getServletContext();
-    	
-//    	@SuppressWarnings("serial")
+//    	
 //		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 //    	List<User> users = em.createQuery("select u from User u", User.class).getResultList();
-    	
+//    	
 //    	System.out.println("===== Listener je obrazovao users");
+    	
+//    	sc.setAttribute("users", users);
 		
 //		new ArrayList<User>() {
 //    		{
@@ -51,7 +52,7 @@ public class Listener implements ServletContextListener {
 //    		}
 //    	};
 //    	
-//    	sc.setAttribute("users", users);
+
     }
 	
 }
