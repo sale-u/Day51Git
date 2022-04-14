@@ -1,0 +1,110 @@
+:root {
+    --main-color: rgba(65, 51, 187, 0.7);
+    --focus-text: rgba(65, 51, 187, 0.5);
+    --button-gradient-start: rgb(38, 52, 235);
+    --button-gradient-end: rgb(96, 105, 223)
+}
+
+@font-face {
+    font-family: 'NatoSans';
+    src: url("../fonts/NatoSans/NotoSans-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NatoSans';
+    src: url("../fonts/NatoSans/NotoSans-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  *{
+    font-family: 'NatoSans';
+  }
+
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://media-exp1.licdn.com/dms/image/C5622AQGlMgKa_gZxAQ/feedshare-shrink_800/0/1643716967642?e=1649894400&v=beta&t=4XwkBxP8iwAr5Y-h5dFEaTL8uAfHzjd1AAcB4u9eMQE");
+    background-size: cover;
+    position: relative;
+    z-index:-1;
+}
+
+.flex-horiz{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    height: 60%;
+    width:40%;
+    border-radius: 20px;
+    color: white;
+    justify-content: space-around;
+}
+
+form {
+    margin-left: 35%;
+    width: 37%;
+}
+
+[type="text"], [type="submit"]{
+    margin-top: 2rem;
+    display:block;
+    height: 3em;
+    width: 100%;
+    padding: 0;
+    color: white;
+}
+
+[type="text"]{
+    outline: none;
+    border:transparent;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+}
+[type="text"]::placeholder{
+    color: white;
+}
+[type="text"]:focus{
+    border: transparent;
+    background-color: var(--focus-text);
+    border-bottom: 2px solid white;
+}
+
+[type="submit"] {
+    background-image : linear-gradient(90deg, var(--button-gradient-start), var(--button-gradient-end));
+    border-radius: 5px;
+}
+[type="submit"]:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.flex-logo{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kvadrat{
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 0.5em;
+}
+.flex-logo .logo{
+    font-size: 1.8em;
+    font-weight: bold;
+}

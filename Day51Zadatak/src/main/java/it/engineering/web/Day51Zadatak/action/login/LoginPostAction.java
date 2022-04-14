@@ -2,6 +2,7 @@ package it.engineering.web.Day51Zadatak.action.login;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
 import it.engineering.web.Day51Zadatak.domain.User;
+import it.engineering.web.Day51Zadatak.persistence.MyEntityManagerFactory;
 import it.engineering.web.Day51Zadatak.storage.UserStorage;
 
 public class LoginPostAction extends AbstractAction {
@@ -37,11 +39,18 @@ public class LoginPostAction extends AbstractAction {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
+//		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+//		List<User> users = em.createQuery("select u from User u", User.class).getResultList();
+//		em.close();
+		
+		
+		
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
 		
 		List<User> users = UserStorage.getInstance().getUsers();
+		
 		for (User current : users) {
 			if (current.equals(user)) return current;
 		}

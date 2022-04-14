@@ -3,6 +3,10 @@ package it.engineering.web.Day51Zadatak.storage;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import it.engineering.web.Day51Zadatak.domain.User;
 
 
@@ -11,6 +15,21 @@ public class UserStorage {
 	private static UserStorage instance;
 	
 	public UserStorage() {
+		
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Day51Zadatak");
+//		System.out.println("EMF");
+//		
+//		EntityManager em = emf.createEntityManager();
+//		System.out.println("EM");
+//		
+//		List<User> users = em.createQuery("SELECT u FROM User u", User.class).getResultList();
+//		
+//		System.out.println(users);
+//		
+//		em.close();
+//		emf.close();
+
+		
 		users = new ArrayList() {
 			{
 				add(new User("user1", "user1"));
@@ -18,6 +37,8 @@ public class UserStorage {
 				add(new User("user3", "user3"));
 			}
 		};
+		
+		
 	}
 	
 	public static UserStorage getInstance() {

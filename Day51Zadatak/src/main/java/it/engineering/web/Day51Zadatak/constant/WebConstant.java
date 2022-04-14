@@ -2,7 +2,8 @@ package it.engineering.web.Day51Zadatak.constant;
 
 public interface WebConstant {
 	
-	public static final String PAGE_LOGIN="/WEB-INF/pages/login.jsp";
+//	public static final String PAGE_LOGIN="/WEB-INF/pages/login.jsp";
+	public static final String PAGE_LOGIN="/login.jsp";
 	public static final String PATH_LOGIN="/login";
 	
 	public static final String PATH_LOGOUT="/logout";

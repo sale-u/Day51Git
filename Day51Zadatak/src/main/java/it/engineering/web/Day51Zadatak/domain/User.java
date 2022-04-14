@@ -1,11 +1,23 @@
 package it.engineering.web.Day51Zadatak.domain;
 
+import java.io.Serializable;
+import javax.persistence.*;
 
-public class User {
-	
+
+/**
+ * The persistent class for the korisnik_tabela database table.
+ * 
+ */
+@Entity
+@Table(name="korisnik_tabela")
+@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
 	private String username;
 	private String password;
-	
+
 	public User() {
 	}
 	
@@ -16,7 +28,7 @@ public class User {
 	}
 
 	public String getUsername() {
-		return username;
+		return this.username;
 	}
 
 	public void setUsername(String username) {
@@ -24,7 +36,7 @@ public class User {
 	}
 
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
 	public void setPassword(String password) {
@@ -70,6 +82,5 @@ public class User {
 	public User clone() {
 		return new User(username, null);
 	}
-	
 
 }

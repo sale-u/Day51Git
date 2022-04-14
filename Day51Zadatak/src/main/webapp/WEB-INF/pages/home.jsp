@@ -6,16 +6,20 @@
 
 <html>
 <body>
-	
+
+	<header>
+		<jsp:include page="/WEB-INF/fragment/login-user.jsp" flush="true"></jsp:include>
+		<jsp:include page="/WEB-INF/fragment/navigation.jsp" flush="true"></jsp:include>
+	</header>
+
 	<main>
 		<h2>Dobro dosli, uspesno ste se prijavili na aplikaciju</h2>
-		<article>
-			<div>
-				Ovo je pocetna stranica koja se prikazuje korisniku nakon prijave na sistem!
-			</div>
-		</article>
+
 	</main>
 	
-	<footer> Copyright 2022.</footer>
+	
+	<footer><br><br> Copyright 2022 </footer>
+
+	
 </body>
 </html>
