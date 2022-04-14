@@ -25,4 +25,6 @@ hs_err_pid*
 # Ignore Eclipse bin folder and .settings
 bin
 .settings
+/target/
+
 
