@@ -15,33 +15,23 @@ public class Proizvodjac implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int pib;
+	private String pib;
+
 	private String adresa;
-	
-	@Column(name="maticni_broj")
-	private int maticniBroj;
-	private String mesto;
-	
+
+	@Column(name="mat_br")
+	private String matBr;
+
+	private int zip_code_FK;
 
 	public Proizvodjac() {
 	}
-	
 
-	public Proizvodjac(int pib, int maticniBroj, String adresa, String mesto) {
-		super();
-		this.pib = pib;
-		this.adresa = adresa;
-		this.maticniBroj = maticniBroj;
-		this.mesto = mesto;
-	}
-
-
-
-	public int getPib() {
+	public String getPib() {
 		return this.pib;
 	}
 
-	public void setPib(int pib) {
+	public void setPib(String pib) {
 		this.pib = pib;
 	}
 
@@ -53,56 +43,20 @@ public class Proizvodjac implements Serializable {
 		this.adresa = adresa;
 	}
 
-	public int getMaticniBroj() {
-		return this.maticniBroj;
+	public String getMatBr() {
+		return this.matBr;
 	}
 
-	public void setMaticniBroj(int maticniBroj) {
-		this.maticniBroj = maticniBroj;
+	public void setMatBr(String matBr) {
+		this.matBr = matBr;
 	}
 
-	public String getMesto() {
-		return this.mesto;
+	public int getZip_code_FK() {
+		return this.zip_code_FK;
 	}
 
-	public void setMesto(String mesto) {
-		this.mesto = mesto;
-	}
-	
-	
-	
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + pib;
-		return result;
+	public void setZip_code_FK(int zip_code_FK) {
+		this.zip_code_FK = zip_code_FK;
 	}
 
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Proizvodjac other = (Proizvodjac) obj;
-		if (pib != other.pib)
-			return false;
-		return true;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "ProizvodjacTable [pib=" + pib + ", adresa=" + adresa + ", maticniBroj=" + maticniBroj + ", mesto="
-				+ mesto + "]";
-	}
-
-	
 }

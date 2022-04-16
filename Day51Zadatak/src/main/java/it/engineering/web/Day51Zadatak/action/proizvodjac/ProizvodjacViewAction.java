@@ -7,13 +7,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
+import it.engineering.web.Day51Zadatak.domain.City;
 import it.engineering.web.Day51Zadatak.domain.Mesto;
 import it.engineering.web.Day51Zadatak.domain.Proizvodjac;
+import it.engineering.web.Day51Zadatak.service.CityService;
+import it.engineering.web.Day51Zadatak.service.impl.CityServiceImpl;
 import it.engineering.web.Day51Zadatak.storage.MestoStorage;
 import it.engineering.web.Day51Zadatak.storage.ProizvodjacStorage;
 
 
 public class ProizvodjacViewAction extends AbstractAction{
+	
+	private CityService cityService;
+	
+	public ProizvodjacViewAction() {
+		cityService = new CityServiceImpl();
+	}
 	
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
@@ -23,8 +32,10 @@ public class ProizvodjacViewAction extends AbstractAction{
 		if (p != null) {
 			request.setAttribute("proizvodjac", p);
 			
-			List<Mesto> mesta = MestoStorage.getInstance().getMesta();
-			request.setAttribute("mesta", mesta);
+//			List<Mesto> mesta = MestoStorage.getInstance().getMesta();
+			
+			List<City> cities = cityService.getCities();
+			request.setAttribute("cities", cities);
 			
 			return WebConstant.PAGE_PROIZVODJAC_VIEW;
 		}
