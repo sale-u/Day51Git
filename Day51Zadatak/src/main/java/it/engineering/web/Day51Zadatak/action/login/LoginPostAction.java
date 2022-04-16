@@ -11,9 +11,18 @@ import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
 import it.engineering.web.Day51Zadatak.domain.User;
 import it.engineering.web.Day51Zadatak.persistence.MyEntityManagerFactory;
+import it.engineering.web.Day51Zadatak.service.UserService;
+import it.engineering.web.Day51Zadatak.service.impl.UserServiceImpl;
 import it.engineering.web.Day51Zadatak.storage.UserStorage;
 
 public class LoginPostAction extends AbstractAction {
+	
+	// 16.04.22 dodato
+	private UserService userService;
+	
+	public LoginPostAction() {
+		userService = new UserServiceImpl();
+	}
 
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
@@ -56,12 +65,12 @@ public class LoginPostAction extends AbstractAction {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-//		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
-//		List<User> users = em.createQuery("select u from User u", User.class).getResultList();
-//		em.close();
+		System.out.println(username + " / " + password);
+			
+		// 16.04.22: Umesto UserStorage-a, sada koristimo strukturu UserService -> UserDao
+		// i odmah ga stavljamo u return
 		
-		
-		
+		/*
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
@@ -71,8 +80,9 @@ public class LoginPostAction extends AbstractAction {
 		for (User current : users) {
 			if (current.equals(user)) return current;
 		}
+		*/
 		
-		return null;
+		return userService.login(username, password);
 	}
 	
 	

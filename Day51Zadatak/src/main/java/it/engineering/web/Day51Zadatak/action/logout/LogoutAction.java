@@ -24,7 +24,7 @@ public class LogoutAction extends AbstractAction{
 		
 		List<User> loggedUsers = UserStorage.getInstance().getLoggedUsers();
 		
-		User loginUser = (User) session.getAttribute("loginUser"); // GRESKA ! Ne vraca mi dobrog usera iz sesije
+		User loginUser = (User) session.getAttribute("loginUser"); // Vraca mi dobrog usera iz sesije tek kada radi incognito browser
 		
 		System.out.println("Session LoginUser=" + loginUser);
 		for (User u : loggedUsers) {

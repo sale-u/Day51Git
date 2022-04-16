@@ -29,7 +29,7 @@
 
 <c:url value="/application/logout" var="urlLogout"></c:url>
 <div>
-	<h2>Prijavljeni ste kao: </h2> <!-- ${sessionScope.loginUser.username} -->
+	<h2>Prijavljeni ste kao: ${sessionScope.loginUser.username}</h2> <!--  -->
 	
 	<a class = "odjava" href="${urlLogout}">Odjavite se</a>
 	<br>
