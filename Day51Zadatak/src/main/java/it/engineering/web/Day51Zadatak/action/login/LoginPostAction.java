@@ -22,6 +22,8 @@ public class LoginPostAction extends AbstractAction {
 		
 		if (user!=null) {
 			
+			/*
+			
 			// da li je vec logovan?
 			List<User> loggedUsers = UserStorage.getInstance().getLoggedUsers();
 			if (loggedUsers.contains(user)) {
@@ -32,6 +34,9 @@ public class LoginPostAction extends AbstractAction {
 			// nije logovan, dodati ga u listu logovanih
 			loggedUsers.add(user);
 			System.out.println(loggedUsers);
+			
+			
+			*/
 			
 			HttpSession session = request.getSession(true);
 			

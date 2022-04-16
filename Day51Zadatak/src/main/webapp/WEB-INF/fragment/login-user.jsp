@@ -4,9 +4,33 @@
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<head>
+	<style>
+		div {
+			width: 50vw;
+			height: 10vh;
+			color: white;
+			margin: 5vh 3vw;
+		}
+		
+		.odjava {
+			background-color: red; 
+			text-decoration: none;
+			color: white; 
+			border: solid black 1px; 
+			padding : 10px 20px;
+			border-radius: 5px; 	
+		}
+	
+	</style>
+
+</head>
+
+
 <c:url value="/application/logout" var="urlLogout"></c:url>
 <div>
-	Prijavljeni ste kao: ${sessionScope.loginUser.username}, <a href="${urlLogout}">Odjavite se</a>
+	<h2>Prijavljeni ste kao: </h2> <!-- ${sessionScope.loginUser.username} -->
+	
+	<a class = "odjava" href="${urlLogout}">Odjavite se</a>
 	<br>
-	Prijavljeni ste kao: ${loginUser.username}
 </div>

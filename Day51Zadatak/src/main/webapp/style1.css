@@ -27,7 +27,7 @@ body{
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("https://media-exp1.licdn.com/dms/image/C5622AQGlMgKa_gZxAQ/feedshare-shrink_800/0/1643716967642?e=1649894400&v=beta&t=4XwkBxP8iwAr5Y-h5dFEaTL8uAfHzjd1AAcB4u9eMQE");
+    background-image: url("https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2021/11/20211112_2_50853993_70603392-1.jpg?quality=85&strip=all&zoom=1&ssl=1");
     background-size: cover;
     position: relative;
     z-index:-1;
@@ -58,7 +58,7 @@ form {
     width: 37%;
 }
 
-[type="text"], [type="submit"], [type="password"]{
+.inp1, [type="submit"]{
     margin-top: 2rem;
     display:block;
     height: 3em;
@@ -67,16 +67,16 @@ form {
     color: white;
 }
 
-[type="text"]{
+.inp1{
     outline: none;
     border:transparent;
     background-color: transparent;
     border-bottom: 2px solid white;
 }
-[type="text"]::placeholder{
+.inp1::placeholder{
     color: white;
 }
-[type="text"]:focus{
+.inp1:focus{
     border: transparent;
     background-color: var(--focus-text);
     border-bottom: 2px solid white;

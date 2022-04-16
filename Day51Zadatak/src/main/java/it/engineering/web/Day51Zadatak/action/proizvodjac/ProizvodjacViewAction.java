@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
+import it.engineering.web.Day51Zadatak.domain.Mesto;
 import it.engineering.web.Day51Zadatak.domain.Proizvodjac;
+import it.engineering.web.Day51Zadatak.storage.MestoStorage;
 import it.engineering.web.Day51Zadatak.storage.ProizvodjacStorage;
 
 
@@ -20,6 +22,10 @@ public class ProizvodjacViewAction extends AbstractAction{
 		
 		if (p != null) {
 			request.setAttribute("proizvodjac", p);
+			
+			List<Mesto> mesta = MestoStorage.getInstance().getMesta();
+			request.setAttribute("mesta", mesta);
+			
 			return WebConstant.PAGE_PROIZVODJAC_VIEW;
 		}
 		else {

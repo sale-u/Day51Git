@@ -35,12 +35,13 @@ public class Listener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent sce)  { 
     
-//    	ServletContext sc = sce.getServletContext();
-//    	
-//		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
-//    	List<User> users = em.createQuery("select u from User u", User.class).getResultList();
-//    	
-//    	System.out.println("===== Listener je obrazovao users");
+    	ServletContext sc = sce.getServletContext();
+    	
+		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+    	List<User> users = em.createQuery("select u from User u", User.class).getResultList();
+    	
+    	System.out.println("===== Listener je obrazovao users");
+    	System.out.println(users);
     	
 //    	sc.setAttribute("users", users);
 		

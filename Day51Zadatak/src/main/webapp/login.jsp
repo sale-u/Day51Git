@@ -16,7 +16,7 @@
     <!-- base mora da se doda inace se putanja ka css prosledjuje serveru u getInfoPath() !!! -->
     <base href="http://localhost:8080/Day51Zadatak/">
     
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style1.css" type="text/css">
 </head>
 
 <body>
@@ -29,8 +29,8 @@
                 </div>
                 <h4>Log in to your account</h4>
                 <h5>${error_message}</h5>
-                <input type="text" name="username" placeholder="Username">
-                <input type="text" name="password" placeholder="Password">
+                <input type="text" name="username" placeholder="Username" class="inp1">
+                <input type="password" name="password" placeholder="Password" class="inp1">
                 <input type="submit" value="Login">
             </form>
         </div>

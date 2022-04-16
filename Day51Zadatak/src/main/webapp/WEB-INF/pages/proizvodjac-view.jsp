@@ -34,7 +34,12 @@
 					<input type="text" name="adresa" value="${proizvodjac.adresa}">
 					<br><br>
 					<label>Mesto</label>
-					<input type="text" name="mesto" value="${proizvodjac.mesto}">		
+					<!-- <input type="text" name="mesto" value="${proizvodjac.mesto}">  -->	
+					<select name="pttBroj">
+						<c:forEach var="m" items="${mesta}">
+							<option value = "${m.pttBroj}">${m.naziv}</option>
+						</c:forEach>
+					</select>	
 					
 					<br><br><br>
 					
@@ -48,7 +53,7 @@
 	</main>
 	
 	
-	<footer><br><br> Copyright 2022 </footer>
+	<jsp:include page="/WEB-INF/fragment/footer.jsp" flush="true"></jsp:include>
 
 </body>
 

@@ -51,7 +51,7 @@
 	</main>
 	
 	
-	<footer><br><br> Copyright 2022 </footer>
+	<jsp:include page="/WEB-INF/fragment/footer.jsp" flush="true"></jsp:include>
 
 </body>
 
