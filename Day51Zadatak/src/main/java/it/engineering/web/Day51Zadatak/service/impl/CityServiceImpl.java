@@ -24,4 +24,9 @@ public class CityServiceImpl implements CityService {
 		return cityDao.findAll();
 	}
 
+	@Override
+	public City findByZipCode(int zipCode) {
+		return cityDao.findByZipCode(zipCode);
+	}
+
 }

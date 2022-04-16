@@ -7,5 +7,7 @@ import it.engineering.web.Day51Zadatak.domain.City;
 public interface CityDao {
 	
 	List<City> findAll();
+	
+	City findByZipCode(int zipCode);
 
 }

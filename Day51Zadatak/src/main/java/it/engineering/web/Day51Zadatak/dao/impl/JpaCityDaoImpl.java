@@ -22,6 +22,14 @@ public class JpaCityDaoImpl implements CityDao {
 
 		return em.createNamedQuery("City.findAll").getResultList();
 	}
+
+
+	@Override
+	public City findByZipCode(int zipCode) {
+		// vraca null ako ne nadje
+		// ako nadje, vraca City objekat
+		return em.find(City.class, zipCode);
+	}
 	
 	
 

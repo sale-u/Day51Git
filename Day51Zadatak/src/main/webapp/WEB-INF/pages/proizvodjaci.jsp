@@ -67,6 +67,7 @@
 							<th>Pib</th>
 							<th>MatBr</th>
 							<th>Adresa</th>
+							<th>PttBroj</th>
 							<th>Mesto</th>
 							<th> </th>
 							<th> </th>
@@ -77,9 +78,10 @@
 					<c:forEach var="p" items="${proizvodjaci}">
 						<tr>
 							<td>${p.pib}</td>
-							<td>${p.maticniBroj}</td>
+							<td>${p.matBr}</td>
 							<td>${p.adresa}</td>
-							<td>${p.mesto}</td>
+							<td>${p.city.zipCode}</td>
+							<td>${p.city.name}</td>
 							<td>
 								<a class="edit" href="/Day51Zadatak/application/proizvView?pib=${p.pib}">Edituj</a>
 							</td>

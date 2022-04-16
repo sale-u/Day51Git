@@ -5,14 +5,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
+import it.engineering.web.Day51Zadatak.service.ProizvodjacService;
+import it.engineering.web.Day51Zadatak.service.impl.ProizvodjacServiceImpl;
 import it.engineering.web.Day51Zadatak.storage.ProizvodjacStorage;
 
 public class ProizvodjaciAction extends AbstractAction {
+	
+	private ProizvodjacService proizvodjacService;
+	
+	public ProizvodjaciAction() {
+		proizvodjacService = new ProizvodjacServiceImpl();
+	}
 
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
 
-		request.setAttribute("proizvodjaci", ProizvodjacStorage.getInstance().getProizvodjaci());
+		request.setAttribute("proizvodjaci", proizvodjacService.getProizvodjaci());
 		
 		return WebConstant.PAGE_PROIZVODJACI;
 	}

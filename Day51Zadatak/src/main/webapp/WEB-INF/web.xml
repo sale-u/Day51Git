@@ -4,9 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <listener>
-  	<listener-class>it.engineering.web.Day51Zadatak.listener.Listener</listener-class>
-  </listener>
+
   <servlet>
   	<servlet-name>FrontController</servlet-name>
   	<display-name>FrontController</display-name>

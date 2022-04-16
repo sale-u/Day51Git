@@ -16,16 +16,29 @@ public class Proizvodjac implements Serializable {
 
 	@Id
 	private String pib;
-
-	private String adresa;
-
+	
 	@Column(name="mat_br")
 	private String matBr;
-
-	private int zip_code_FK;
+	
+	private String adresa;
+	
+	@ManyToOne
+	@JoinColumn(name = "zip_code_FK", referencedColumnName = "zip_code")
+	private City city;
 
 	public Proizvodjac() {
 	}
+	
+	
+
+	public Proizvodjac(String pib, String matBr, String adresa, City city) {
+		super();
+		this.pib = pib;
+		this.matBr = matBr;
+		this.adresa = adresa;
+		this.city = city;
+	}
+
 
 	public String getPib() {
 		return this.pib;
@@ -51,12 +64,48 @@ public class Proizvodjac implements Serializable {
 		this.matBr = matBr;
 	}
 
-	public int getZip_code_FK() {
-		return this.zip_code_FK;
+	public City getCity() {
+		return city;
 	}
 
-	public void setZip_code_FK(int zip_code_FK) {
-		this.zip_code_FK = zip_code_FK;
+	public void setCity(City city) {
+		this.city = city;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((pib == null) ? 0 : pib.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Proizvodjac other = (Proizvodjac) obj;
+		if (pib == null) {
+			if (other.pib != null)
+				return false;
+		} else if (!pib.equals(other.pib))
+			return false;
+		return true;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Proizvodjac [pib=" + pib + ", matBr=" + matBr + ", adresa=" + adresa + ", city=" + city + "]";
+	}
+
+
+	
+	
 }

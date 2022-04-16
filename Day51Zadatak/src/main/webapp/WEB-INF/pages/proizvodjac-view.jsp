@@ -7,8 +7,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Prikazi proizvodjaca</title>
+	<meta charset="ISO-8859-1">
+	<title>Prikazi proizvodjaca</title>
+	<style>
+		body {
+			background-image:
+			url("https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2021/11/20211112_2_50853993_70603392-1.jpg?quality=85&strip=all&zoom=1&ssl=1");
+			background-size: cover;
+			color: white;
+		}
+	
+	</style>
+
+
 </head>
 
 <body>
@@ -25,19 +36,21 @@
 			<div>
 				<form action="/Day51Zadatak/application/proizvSave" method="post">
 					<label>Pib</label>
-					<input type="number" name="pib" value="${proizvodjac.pib}" readonly="readonly">
+					<input type="text" name="pib" value="${proizvodjac.pib}" readonly="readonly">
 					<br><br>
 					<label>MatBroj</label>
-					<input type="number" name="matbr" value="${proizvodjac.maticniBroj}">	
+					<input type="text" name="matbr" value="${proizvodjac.matBr}">	
 					<br><br>
 					<label>Adresa</label>
 					<input type="text" name="adresa" value="${proizvodjac.adresa}">
 					<br><br>
 					<label>Mesto</label>
-					<!-- <input type="text" name="mesto" value="${proizvodjac.mesto}">  -->	
-					<select name="pttBroj">
-						<c:forEach var="m" items="${mesta}">
-							<option value = "${m.pttBroj}">${m.naziv}</option>
+					<select name="zipCode">
+						<c:forEach var="c" items="${cities}">
+							<option value = "${c.zipCode}"
+								${c.zipCode == proizvodjac.city.zipCode ? 'selected' : ''}>
+								${c.zipCode} ${c.name}
+							</option>
 						</c:forEach>
 					</select>	
 					

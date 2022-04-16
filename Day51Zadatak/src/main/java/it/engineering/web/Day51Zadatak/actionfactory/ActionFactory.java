@@ -6,6 +6,7 @@ import it.engineering.web.Day51Zadatak.action.login.LoginPostAction;
 import it.engineering.web.Day51Zadatak.action.logout.LogoutAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacAddAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacAddSaveAction;
+import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacDeleteAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacSaveAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacViewAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjaciAction;
@@ -39,7 +40,10 @@ public class ActionFactory {
 		break;
 	case WebConstant.PATH_PROIZVODJAC_ADD_SAVE:
 		action = new ProizvodjacAddSaveAction();
-		break;		
+		break;
+	case WebConstant.PATH_PROIZVODJAC_DELETE:
+		action = new ProizvodjacDeleteAction();
+		break;
 		
 		default:
 			break;
