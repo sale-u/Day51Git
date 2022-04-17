@@ -23,8 +23,6 @@ public class UserServiceImpl implements UserService {
 	public User login(String username, String password) {
 		List<User> users = userDao.findAll();
 		
-		System.out.println(users);
-		
 		for (User u : users) {
 			if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
 				return u;

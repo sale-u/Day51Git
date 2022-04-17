@@ -33,12 +33,14 @@ public class LogoutAction extends AbstractAction{
 				break;
 			}
 		}
-		System.out.println(loggedUsers);
+		System.out.println("Logged users= " + loggedUsers);
 
 		
 		session.removeAttribute("loginUser"); 	// sklanjamo atribut "loginUser"
 		session.invalidate();					// proglasava sesiju invalidnom i raskida njenu vezu sa ostalim objektima
 		session = request.getSession(false);	// vraca null
+		
+		System.out.println("Nakon LOGOUT Session loginUser = " + request.getSession().getAttribute("loginUser"));
 			
 		return WebConstant.PAGE_INDEX;			// vraca se na index.jsp
 	}

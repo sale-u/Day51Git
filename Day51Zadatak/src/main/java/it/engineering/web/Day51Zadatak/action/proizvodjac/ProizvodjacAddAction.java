@@ -9,9 +9,7 @@ import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
 import it.engineering.web.Day51Zadatak.domain.City;
 import it.engineering.web.Day51Zadatak.service.CityService;
-import it.engineering.web.Day51Zadatak.service.ProizvodjacService;
 import it.engineering.web.Day51Zadatak.service.impl.CityServiceImpl;
-import it.engineering.web.Day51Zadatak.service.impl.ProizvodjacServiceImpl;
 
 public class ProizvodjacAddAction extends AbstractAction {
 	

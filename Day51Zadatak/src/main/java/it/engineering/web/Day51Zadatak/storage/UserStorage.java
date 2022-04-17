@@ -3,12 +3,11 @@ package it.engineering.web.Day51Zadatak.storage;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import it.engineering.web.Day51Zadatak.domain.User;
 
+
+//******************** koristim UserStorage klasu za loggedUsere **********************
+// ******************************* NE BRISATI !!!! ***********************************
 
 public class UserStorage {
 	private List<User> users;
@@ -31,13 +30,13 @@ public class UserStorage {
 //		emf.close();
 
 		
-		users = new ArrayList() {
-			{
-				add(new User("user1", "user1"));
-				add(new User("user2", "user2"));
-				add(new User("user3", "user3"));
-			}
-		};
+//		users = new ArrayList() {
+//			{
+//				add(new User("user1", "user1"));
+//				add(new User("user2", "user2"));
+//				add(new User("user3", "user3"));
+//			}
+//		};
 		
 		loggedUsers = new ArrayList<>();
 		

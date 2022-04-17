@@ -31,7 +31,7 @@
                 <h5>${error_message}</h5>
                 <input type="text" name="username" placeholder="Username" class="inp1">
                 <input type="password" name="password" placeholder="Password" class="inp1">
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" class="dugme">
             </form>
         </div>
     </div>

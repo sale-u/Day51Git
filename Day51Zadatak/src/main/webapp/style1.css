@@ -2,7 +2,7 @@
     --main-color: rgba(65, 51, 187, 0.7);
     --focus-text: rgba(65, 51, 187, 0.5);
     --button-gradient-start: rgb(38, 52, 235);
-    --button-gradient-end: rgb(96, 105, 223)
+    --button-gradient-end: rgb(96, 105, 223);
     --button-ciklama: rgba(200, 51, 120, 0.9);
 }
 
@@ -59,7 +59,7 @@ form {
     width: 37%;
 }
 
-.inp1, [type="submit"]{
+.inp1, .dugme{
     margin-top: 2rem;
     display:block;
     height: 3em;
@@ -83,11 +83,11 @@ form {
     border-bottom: 2px solid white;
 }
 
-[type="submit"] {
+.dugme {
     background-image : linear-gradient(90deg, var(--button-gradient-start), var(--button-gradient-end));
     border-radius: 5px;
 }
-[type="submit"]:hover{
+.dugme:hover{
     transition: 0.5s;
     transform: scale(1.1);
 }

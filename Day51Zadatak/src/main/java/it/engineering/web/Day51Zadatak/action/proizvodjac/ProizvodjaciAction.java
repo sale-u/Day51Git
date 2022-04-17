@@ -7,7 +7,6 @@ import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
 import it.engineering.web.Day51Zadatak.service.ProizvodjacService;
 import it.engineering.web.Day51Zadatak.service.impl.ProizvodjacServiceImpl;
-import it.engineering.web.Day51Zadatak.storage.ProizvodjacStorage;
 
 public class ProizvodjaciAction extends AbstractAction {
 	
