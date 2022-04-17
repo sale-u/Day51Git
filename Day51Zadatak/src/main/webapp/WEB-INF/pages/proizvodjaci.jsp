@@ -77,7 +77,7 @@
 								<a class="edit" href="/Day51Zadatak/application/proizvView?pib=${p.pib}">Edituj</a>
 							</td>
 							<td>
-								<a class="obrisi" href="/Day51Zadatak/application/proizvDelete?pib=${p.pib}">Obrisi</a>
+								<a class="obrisi" href="/Day51Zadatak/application/proizvConfDelete?pib=${p.pib}">Obrisi</a>
 							</td>
 						</tr>
 					</c:forEach>

@@ -32,7 +32,7 @@
 		}
 		
 		h3 {
-			margin: 0 1.6rem; 
+			margin: 0 2.5rem; 
 			text-decoration: underline;
 		}
 	

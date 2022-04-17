@@ -16,16 +16,16 @@ import it.engineering.web.Day51Zadatak.service.impl.ProizvodjacServiceImpl;
 import it.engineering.web.Day51Zadatak.storage.ProizvodjacStorage;
 
 
-public class ProizvodjacDeleteAction extends AbstractAction {
+public class ProizvodjacConfirmDeleteAction extends AbstractAction {
 	
-	// Vrsi brisanje proizvodjaca po parametru pib iz baze
-	// poziva ga proizvodjac-confirm-del.jsp
-	// a nakon brisanja se vraca na proizvodjaci.jsp
+	// potvrda da li zaista brisemo proizvodjaca
+	// zove ga dugme "Obrisi" sa proizvodjaci.jsp
+	// salje na proizvodjac-confirm-del.jsp
 	
 	private ProizvodjacService ps;
 	private CityService cs;
 	
-	public ProizvodjacDeleteAction() {
+	public ProizvodjacConfirmDeleteAction() {
 		ps = new ProizvodjacServiceImpl();
 		cs = new CityServiceImpl();
 	}
@@ -34,21 +34,12 @@ public class ProizvodjacDeleteAction extends AbstractAction {
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
 
 		String pib = request.getParameter("pib");
+		Proizvodjac zaConfBrisanja = ps.findByPib(pib);
 		
-		if (request.getParameter("dugme").equalsIgnoreCase("cancel")) {
-			// pritisnuto je cancel dugme pa se vracamo na listu
-			
-			List<Proizvodjac> proizvodjaci = ps.getProizvodjaci();
-			request.setAttribute("proizvodjaci", proizvodjaci);
-			return WebConstant.PAGE_PROIZVODJACI;
-		}
-		
-		// odobreno je brisanje!
-		
-		Proizvodjac zaBrisanje = ps.deleteByPib(pib);
-		
-		if (zaBrisanje != null) {
-			System.out.println("Uspesno obrisan = " + zaBrisanje);
+		if (zaConfBrisanja != null) {
+			// idemo na stranicu potvrde brisanja
+			request.setAttribute("proizvodjac", zaConfBrisanja);
+			return WebConstant.PAGE_PROIZVODJAC_CONFIRM_DELETE;
 		}
 		
 		request.setAttribute("proizvodjaci", ps.getProizvodjaci());

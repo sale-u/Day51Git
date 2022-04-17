@@ -26,6 +26,8 @@ public interface WebConstant {
 
 	public static final String PATH_PROIZVODJAC_ADD_SAVE = "/proizvAddSave";
 	
+	public static final String PATH_PROIZVODJAC_CONFIRM_DELETE = "/proizvConfDelete";
+	public static final String PAGE_PROIZVODJAC_CONFIRM_DELETE = "/WEB-INF/pages/proizvodjac-confirm-del.jsp";
 	public static final String PATH_PROIZVODJAC_DELETE = "/proizvDelete";
 
 }
