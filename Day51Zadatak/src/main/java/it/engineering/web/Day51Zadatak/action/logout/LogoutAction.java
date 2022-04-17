@@ -6,8 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.eclipse.persistence.sessions.Session;
-
 import it.engineering.web.Day51Zadatak.action.AbstractAction;
 import it.engineering.web.Day51Zadatak.constant.WebConstant;
 import it.engineering.web.Day51Zadatak.domain.User;

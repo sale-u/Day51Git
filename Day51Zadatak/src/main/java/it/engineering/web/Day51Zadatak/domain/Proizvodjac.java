@@ -16,10 +16,8 @@ public class Proizvodjac implements Serializable {
 
 	@Id
 	private String pib;
-	
 	@Column(name="mat_br")
 	private String matBr;
-	
 	private String adresa;
 	
 	@ManyToOne

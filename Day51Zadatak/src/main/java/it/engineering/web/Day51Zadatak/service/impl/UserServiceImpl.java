@@ -14,6 +14,7 @@ public class UserServiceImpl implements UserService {
 	private EntityManager em;
 	private UserDao userDao;
 	
+	// konstruktor obezbedjuje EntityManager kao i referencu prema DAO konkr.klasi
 	public UserServiceImpl() {
 		em = Persistence.createEntityManagerFactory("Day51Zadatak").createEntityManager();
 		userDao = new JpaUserDaoImpl(em);

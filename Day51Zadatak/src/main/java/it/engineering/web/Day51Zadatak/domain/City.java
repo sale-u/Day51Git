@@ -17,7 +17,6 @@ public class City implements Serializable {
 	@Id
 	@Column(name="zip_code")
 	private int zipCode;
-
 	private String name;
 
 	public City() {
