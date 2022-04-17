@@ -17,6 +17,8 @@ import it.engineering.web.Day51Zadatak.storage.ProizvodjacStorage;
 
 public class ProizvodjacSaveAction extends AbstractAction {
 	
+	// SAVE (Sacuvaj izmene) nakon izmena na postojecem proizvodjacu
+	
 	private ProizvodjacService ps;
 	private CityService cs;
 	
@@ -41,7 +43,17 @@ public class ProizvodjacSaveAction extends AbstractAction {
 			return WebConstant.PAGE_PROIZVODJACI;
 		}
 		
-		// Korisnik je odobrio da se ova izmena sacuva
+		// Korisnik je odobrio da se ova izmena sacuva (dugme "Sacuvaj izmene")
+		
+		// provera da li je uneo sve cifre u matBr
+		String regex = "[0-9]+";
+		if (!matBr.matches(regex)) {
+			request.setAttribute("error_message", "Maticni broj mora da se sastoji iskljucivo iz brojeva");
+			Proizvodjac p = ps.findByPib(pib);
+			request.setAttribute("proizvodjac", p);
+			request.setAttribute("cities", cs.getCities());
+			return WebConstant.PAGE_PROIZVODJAC_VIEW;
+		}
 		
 		City city = cs.findByZipCode(Integer.parseInt(zipCode));
 		System.out.println("Nadjen city=" + city);

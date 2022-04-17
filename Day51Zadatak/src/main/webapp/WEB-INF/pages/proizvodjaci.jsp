@@ -6,13 +6,7 @@
 
 <head>
 	<style>
-		body {
-			background-image:
-			url("https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2021/11/20211112_2_50853993_70603392-1.jpg?quality=85&strip=all&zoom=1&ssl=1");
-			background-size: cover;
-			color: white;
-		}
-		
+	
 		th, td {
 			padding: 7px 10px;
 		}
@@ -29,6 +23,7 @@
 			text-decoration: none;
 			color: white;
 			background-color:  rgba(65, 51, 187, 0.9);
+			outline: solid white 1px;
 			border: solid blue 1px;
 			border-radius: 5px;
 			padding: 5px 15px;
@@ -36,12 +31,8 @@
 		}
 		
 		.obrisi {
-			background-color:  rgba(120, 51, 255, 0.7);
-		}
-		
-		h3 {
-			margin: 0 3rem; 
-			text-decoration: underline;
+			/* background-color:  rgba(120, 51, 255, 0.7); */
+			background-color:  rgba(200, 51, 120, 0.9);
 		}
 	
 	</style>
@@ -57,7 +48,7 @@
 	</header>
 
 	<main>
-		<br><br>
+		<br>
 		<h3>Svi proizvodjaci registrovani u sistemu:</h3>
 
 			<div>

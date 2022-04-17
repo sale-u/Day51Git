@@ -3,6 +3,7 @@
     --focus-text: rgba(65, 51, 187, 0.5);
     --button-gradient-start: rgb(38, 52, 235);
     --button-gradient-end: rgb(96, 105, 223)
+    --button-ciklama: rgba(200, 51, 120, 0.9);
 }
 
 @font-face {

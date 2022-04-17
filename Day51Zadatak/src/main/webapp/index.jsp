@@ -13,9 +13,10 @@ body {
 }
 
 a {
-	background-color: green;
+	background-color: rgba(120, 150, 230, 0.9);
 	color: white;
 	border: solid black 1px;
+	outline: solid white 1px;
 	border-radius: 5px; 
 	padding : 10px 20px;
 	text-decoration: none;

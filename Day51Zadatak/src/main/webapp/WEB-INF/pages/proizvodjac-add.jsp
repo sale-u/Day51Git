@@ -9,12 +9,40 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Dodaj proizvodjaca</title>
+	
+	
 	<style>
-		body {
-			background-image:
-			url("https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2021/11/20211112_2_50853993_70603392-1.jpg?quality=85&strip=all&zoom=1&ssl=1");
-			background-size: cover;
+		table {
+			border-spacing: 5px
+		}
+		
+		td {
+			background-color:  rgba(65, 51, 187, 0.5);
+			padding: 7px 10px;
+		}
+		
+		[type="text"], select {
+			background-color:  rgba(65, 51, 187, 0.5);
 			color: white;
+			font-size: 1rem;
+		}
+		
+		.cancel, .dodaj {
+			text-decoration: none;
+			color: white;
+			border: solid blue 1px;
+			outline: solid white 1px;
+			border-radius: 5px;
+			padding: 10px 15px;
+			margin: 2rem 3rem 0 0;
+		}
+		
+		.cancel {
+			background-color:  rgba(200, 51, 120, 0.9);
+		}
+		
+		.dodaj {
+			background-color:  rgba(120, 150, 230, 0.9);
 		}
 	
 	</style>
@@ -29,36 +57,41 @@
 
 
 	<main>
-		<h2>Dodaj proizvodjaca</h2>
+		<br>
+		<h3>Dodaj proizvodjaca</h3>
 		<article>
 			<div>
 				<form action="/Day51Zadatak/application/proizvAddSave" method="post">
-					<label>Pib</label>
-					<input type="text" name="pib">
-					<br><br>
-					<label>MatBroj</label>
-					<input type="text" name="matbr">	
-					<br><br>
-					<label>Adresa</label>
-					<input type="text" name="adresa">
-					<br><br>
-					<label>Mesto</label>
-					<select name="zipCode">
-						<c:forEach var="c" items="${cities}">
-							<option value = "${c.zipCode}">
-								${c.zipCode} ${c.name}
-							</option>
-						</c:forEach>
-					</select>
-	
+					<table>
+					<tbody>
+						<tr>
+							<td>Pib</td>
+							<td><input type="text" name="pib"></td>
+						</tr>
+						<tr>
+							<td>MatBroj</td>
+							<td><input type="text" name="matbr"></td>	
+						</tr>
+						<tr>
+							<td>Adresa</td>
+							<td><input type="text" name="adresa"></td>
+						</tr>
+						<tr>
+							<td>Mesto</td>
+							<td><select name="zipCode">
+								<c:forEach var="c" items="${cities}">
+									<option value = "${c.zipCode}">${c.zipCode} ${c.name}</option>
+								</c:forEach>
+							</select></td>	
+						</tr>
+					</tbody>
+				</table>
+									
+				<input class="cancel" type="submit" value="cancel" name="dugme">
+				<input class="dodaj" type="submit" value="Dodaj" name="dugme">
 					
-					<br><br><br>
-					
-					<input type="submit" value="cancel" name="dugme">
-					<input type="submit" value="Dodaj" name="dugme">
-					
-					<br><br>
-					<p>${requestScope.error_message}</p>
+				<br><br>
+				<p style="background-color: red;">${requestScope.error_message}</p>
 
 				</form>
 			</div>

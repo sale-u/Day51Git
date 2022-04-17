@@ -6,12 +6,6 @@
 
 <head>
 <style>
-	body {
-		background-image:
-			url("https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2021/11/20211112_2_50853993_70603392-1.jpg?quality=85&strip=all&zoom=1&ssl=1");
-		background-size: cover;
-	}
-	
 	main {
 		width: 55vw;
 		height: 30vh;

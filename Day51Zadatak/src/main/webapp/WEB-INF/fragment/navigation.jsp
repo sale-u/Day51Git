@@ -8,10 +8,12 @@
 	<style>
 		.lnk {
 			text-decoration: none;
+			background-color: rgba(65, 100, 180, 0.5);
 			color: white; 
 			border: solid white 1px; 
 			padding : 10px 20px;
 			border-radius: 5px;
+			margin: 0 1rem 0 0;
 		}
 	
 	</style>
@@ -26,8 +28,9 @@
 	<nav>
 		<br>
 		<a class="lnk" href="${proizvAdd}">Dodaj proizvodjaca</a>
-		<br><br><br>
 		<a class="lnk" href="${proizvList }">Lista svih proizvodjaca</a>
+		<br><br><br>
+		<hr>
 	</nav>
 </div>
 
