@@ -62,7 +62,7 @@
 		<br>
 		<h3>Trenutni podaci o proizvodjacu</h3>
 		<div>
-			<form action="/Day51Zadatak/application/proizvSave" method="post">
+			<form action="/Day51Zadatak/application/proizvSaveConf" method="post">
 				<table>
 					<tbody>
 						<tr>

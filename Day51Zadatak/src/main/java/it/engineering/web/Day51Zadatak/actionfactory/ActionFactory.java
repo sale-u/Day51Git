@@ -7,6 +7,7 @@ import it.engineering.web.Day51Zadatak.action.logout.LogoutAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacAddAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacAddSaveAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacConfirmDeleteAction;
+import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacConfirmEditAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacDeleteAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacSaveAction;
 import it.engineering.web.Day51Zadatak.action.proizvodjac.ProizvodjacViewAction;
@@ -47,6 +48,9 @@ public class ActionFactory {
 		break;
 	case WebConstant.PATH_PROIZVODJAC_DELETE:
 		action = new ProizvodjacDeleteAction();
+		break;
+	case WebConstant.PATH_PROIZVODJAC_SAVE_CONF:
+		action = new ProizvodjacConfirmEditAction();
 		break;
 		
 		

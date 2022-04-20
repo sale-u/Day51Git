@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Obrisi proizvodjaca</title>
+	<title>Edit proizvodjaca</title>
 	
 	<style>
 		table {
@@ -26,7 +26,7 @@
 			font-size: 1rem;
 		}
 		
-		.cancel, .obrisi {
+		.cancel, .potvrdi {
 			text-decoration: none;
 			color: white;
 			border: solid blue 1px;
@@ -40,11 +40,9 @@
 			background-color:  rgba(200, 51, 120, 0.9);
 		}
 		
-		.obrisi {
+		.potvrdi {
 			background-color:  rgba(120, 150, 230, 0.9);
 		}
-
-	
 	</style>
 
 
@@ -60,32 +58,32 @@
 
 	<main>
 		<br>
-		<h3>Da li zaista zelite obrisati proizvodjaca?</h3>
+		<h3>Da li zaista zelite sacuvati izmene nad proizvodjacem?</h3>
 		<div>
-			<form action="/Day51Zadatak/application/proizvDelete?pib=${proizvodjac.pib}" method="post">
+			<form action="/Day51Zadatak/application/proizvSave" method="post">
 				<table>
 					<tbody>
 						<tr>
 							<td>Pib</td>
-							<td>${proizvodjac.pib}</td>
+							<td><input type="text" name="pib" value="${proizvodjac.pib}" readonly="readonly"></td>
 						</tr>
 						<tr>
 							<td>MatBroj</td>
-							<td>${proizvodjac.matBr}</td>	
+							<td><input type="text" name="matbr" value="${proizvodjac.matBr}" readonly="readonly"></td>	
 						</tr>
 						<tr>
 							<td>Adresa</td>
-							<td>${proizvodjac.adresa}</td>
+							<td><input type="text" name="adresa" value="${proizvodjac.adresa}" readonly="readonly"></td>
 						</tr>
 						<tr>
 							<td>Mesto</td>
-							<td>${proizvodjac.city.zipCode} ${proizvodjac.city.name}</td>	
+							<td><input type="text" name="mesto" value="${proizvodjac.city.zipCode} ${proizvodjac.city.name}" readonly="readonly"></td>	
 						</tr>
 					</tbody>
 				</table>
 				
 				<input class="cancel" type="submit" value="cancel" name="dugme">
-				<input class="obrisi" type="submit" value="Potvrdi" name="dugme">
+				<input class="potvrdi" type="submit" value="Potvrdi" name="dugme">
 
 			</form>
 			

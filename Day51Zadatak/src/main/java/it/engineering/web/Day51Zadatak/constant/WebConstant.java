@@ -20,6 +20,8 @@ public interface WebConstant {
 
 
 	public static final String PATH_PROIZVODJAC_SAVE = "/proizvSave";
+	public static final String PATH_PROIZVODJAC_SAVE_CONF = "/proizvSaveConf";
+	public static final String PAGE_PROIZVODJAC_SAVE_CONF = "/WEB-INF/pages/proizvodjac-confirm-edit.jsp";
 
 	public static final String PATH_PROIZVODJAC_ADD = "/proizvAdd";
 	public static final String PAGE_PROIZVODJAC_ADD = "/WEB-INF/pages/proizvodjac-add.jsp";

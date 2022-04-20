@@ -17,6 +17,7 @@ import it.engineering.web.Day51Zadatak.service.impl.ProizvodjacServiceImpl;
 public class ProizvodjacSaveAction extends AbstractAction {
 	
 	// SAVE (Sacuvaj izmene) nakon izmena na postojecem proizvodjacu
+	// zove ga proizvodjac-confirm-edit.jsp
 	
 	private ProizvodjacService ps;
 	private CityService cs;
@@ -32,7 +33,10 @@ public class ProizvodjacSaveAction extends AbstractAction {
 		String pib = request.getParameter("pib");
 		String matBr = request.getParameter("matbr");
 		String adresa = request.getParameter("adresa");		
-		String zipCode = request.getParameter("zipCode");	
+		String mesto = request.getParameter("mesto");		// <input vraca mesto koje se sastoji od zipCode i naziva
+		// pa izdvajamo samo zipCode (prvih 5 karaktera)
+		String zipCode = mesto.substring(0, mesto.indexOf(" "));
+		System.out.println("zipCode = *" + zipCode + "*");
 		
 		if (request.getParameter("dugme").equalsIgnoreCase("cancel")) {
 			// pritisnuto je cancel dugme pa se vracamo na listu
@@ -42,17 +46,7 @@ public class ProizvodjacSaveAction extends AbstractAction {
 			return WebConstant.PAGE_PROIZVODJACI;
 		}
 		
-		// Korisnik je odobrio da se ova izmena sacuva (dugme "Sacuvaj izmene")
-		
-		// provera da li je uneo sve cifre u matBr
-		String regex = "[0-9]+";
-		if (!matBr.matches(regex)) {
-			request.setAttribute("error_message", "Maticni broj mora da se sastoji iskljucivo iz brojeva");
-			Proizvodjac p = ps.findByPib(pib);
-			request.setAttribute("proizvodjac", p);
-			request.setAttribute("cities", cs.getCities());
-			return WebConstant.PAGE_PROIZVODJAC_VIEW;
-		}
+		// Korisnik je odobrio da se ova izmena sacuva (dugme "Potvrdi")
 		
 		City city = cs.findByZipCode(Integer.parseInt(zipCode));
 		System.out.println("Nadjen city=" + city);
@@ -68,18 +62,6 @@ public class ProizvodjacSaveAction extends AbstractAction {
 		
 		Proizvodjac modProizvodjac = new Proizvodjac(pib, matBr, adresa, city);
 		ps.saveOrUpdate(modProizvodjac);
-
-//		List<Proizvodjac> proizvodjaci = ProizvodjacStorage.getInstance().getProizvodjaci();
-//		
-//		for (Proizvodjac p : proizvodjaci) {
-//			if (p.getPib() == pib) {
-//				p.setMaticniBroj(matBr);
-//				p.setAdresa(adresa);
-//				p.setMesto(mesto);
-//				// automatski su izmenjena polja clana liste
-//				break;
-//			}
-//		}
 		
 	}
 
